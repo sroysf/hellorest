@@ -1,4 +1,4 @@
-package us.sroy.restapi.resources;
+package us.sroysf.restapi.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 
-import us.sroy.restapi.model.SimpleAddress;
+import us.sroysf.restapi.model.SimpleAddress;
 
 /**
  * AddressResource

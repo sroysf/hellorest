@@ -1,4 +1,4 @@
-package us.sroy.restapi;
+package us.sroysf.restapi;
 
 public class DemoHealthCheck extends com.codahale.metrics.health.HealthCheck {
 

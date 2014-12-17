@@ -1,4 +1,4 @@
-package us.sroy.restapi;
+package us.sroysf.restapi;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import us.sroy.restapi.resources.AddressResource;
+import us.sroysf.restapi.resources.AddressResource;
 
 public class DemoAPIApplication extends
         Application<DemoAPIConfiguration> {

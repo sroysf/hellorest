@@ -1,4 +1,4 @@
-package us.sroy.restapi;
+package us.sroysf.restapi;
 
 import io.dropwizard.Configuration;
 

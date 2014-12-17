@@ -11,7 +11,7 @@
     <properties>
         <java.version>1.7</java.version>
         <repo.bucket.name>sroysf-maven-aws-repo</repo.bucket.name>
-        <module.main.class>us.sroysf.AppMain</module.main.class>
+        <module.main.class>us.sroysf.restapi.DemoAPIApplication</module.main.class>
     </properties>
 
     <repositories>
