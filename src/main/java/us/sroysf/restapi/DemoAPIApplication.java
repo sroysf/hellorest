@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import us.sroysf.restapi.resources.AddressResource;
+import us.sroysf.restapi.resources.HelloResource;
 
 public class DemoAPIApplication extends
         Application<DemoAPIConfiguration> {
@@ -33,8 +33,8 @@ public class DemoAPIApplication extends
         log.info("Using first name : " + configuration.getFirstName());
         log.info("Using last name : " + configuration.getLastName());
 
-        final AddressResource addressResource = new AddressResource();
-        environment.jersey().register(addressResource);
+        final HelloResource helloResource = new HelloResource();
+        environment.jersey().register(helloResource);
         environment.healthChecks().register("healthCheck", new DemoHealthCheck());
     }
 }
