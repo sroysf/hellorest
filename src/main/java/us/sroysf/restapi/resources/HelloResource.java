@@ -1,19 +1,22 @@
 package us.sroysf.restapi.resources;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
-import java.util.UUID;
+import com.codahale.metrics.annotation.Timed;
+import org.apache.commons.io.IOUtils;
+import us.sroysf.restapi.model.Message;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import com.codahale.metrics.annotation.Timed;
-
-import us.sroysf.restapi.model.Message;
+import javax.ws.rs.core.Response;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.URI;
+import java.util.Enumeration;
+import java.util.UUID;
 
 /**
  * AddressResource
@@ -26,6 +29,18 @@ public class HelloResource {
 
     private final UUID uniqueId = UUID.randomUUID();
     private final String ipAddress = getMyIP();
+
+    @PUT
+    public Response put(InputStream inputStream) {
+        try {
+            System.out.println("========= PUT INPUT RECEIVED ==========");
+            IOUtils.copy(inputStream, System.out);
+            return Response.created(new URI("/hello")).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 
     @GET
     @Timed
